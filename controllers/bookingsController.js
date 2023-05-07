@@ -7,7 +7,7 @@ exports.createBooking = async (req, res) => {
       ride:req.body.ride
     });
     await booking.save();
-    res.status(200).json({ message: 'Booking created successfully', booking });
+    res.status(201).json({ message: 'Booking created successfully', booking });
   } catch (err) {
     console.error(err)
   }
@@ -64,5 +64,3 @@ exports.deleteBookingById = async (req, res) => {
     console.error(err)
   }
 };
-
-

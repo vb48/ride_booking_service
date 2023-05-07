@@ -13,7 +13,7 @@ exports.createRide = async (req, res) => {
     const savedRide = await ride.save();
     res.status(201).json({savedRide});
   } catch (err) {
-    res.json({ message: err.message });
+    res.status(500).json({ message: err.message });
   }
 };
 
@@ -36,7 +36,7 @@ exports.getRideById = async (req, res) => {
     }
     res.json(ride);
   } catch (err) {
-    res.json({ message: err.message });
+    res.status(404).json({ message: err.message });
   }
 };
 
@@ -51,10 +51,9 @@ exports.getRideBookingsById = async (req, res) => {
     }
     res.json({bookings});
   } catch (err) {
-    res.json({ message: err.message });
+    res.status(404).json({ message: err.message });
   }
 };
-
 
 // Update a Ride by ID
 exports.updateRideById = async (req, res) => {
@@ -86,6 +85,6 @@ exports.deleteRideById = async (req, res) => {
     await ride.remove();
     res.json({ message:`${ride} Ride deleted` });
   } catch (err) {
-    res.json({ message: err.message });
+    res.status(404).json({ message: err.message });
   }
 };
