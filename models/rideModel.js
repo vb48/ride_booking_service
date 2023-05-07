@@ -9,9 +9,9 @@ const rideSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  bookings: {
+  driver: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Booking",
+    ref: "Dirver",
     required: true
   }
 });

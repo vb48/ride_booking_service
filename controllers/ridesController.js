@@ -40,7 +40,6 @@ exports.getRideById = async (req, res) => {
   }
 };
 
-
 // Retrieve all bookings for a particular Ride by ID
 exports.getRideBookingsById = async (req, res) => {
   try {
