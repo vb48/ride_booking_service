@@ -2,7 +2,7 @@
   "name": "citocabs",
   "version": "1.0.0",
   "description": "API for booking a ride",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
